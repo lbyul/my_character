@@ -1,0 +1,423 @@
+* {box-sizing: border-box;}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #C3EDC7;
+}
+
+:root {
+    --border-line: 6px solid #000;
+}
+
+.my {
+    position: relative;
+    margin: 50px auto;
+    top: 100px;
+    width: 450px;
+}
+.my:hover {
+    transform: scale(1.2) rotate(10deg);
+    transition: 0.5s ease-out;
+}
+.my:not(:hover) {
+    transition: 0.5s ease-out;
+}
+
+.character {
+    width: 450px;
+    height: 367px;
+    position: relative;
+}
+
+/* 호랑이 귀 */
+[class^="tiger-ears"] {
+    width: 72px;
+    height: 62px;
+    background-color: #F7941D;
+    border-radius: 50%;
+    border: var(--border-line);
+    position: absolute;
+    top: 25px;
+}
+.tiger-ears-left {
+    left: 82px;
+    transform: rotate(-30deg);
+}
+.tiger-ears-left::before {
+    content: '';
+    width: 38px;
+    height: 30px;
+    background-color: #FBB040;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 11px;
+    transform: rotate(-10deg);
+}
+.tiger-ears-right {
+    right: 82px;
+    transform: rotate(30deg);
+}
+.tiger-ears-right::before {
+    content: '';
+    width: 38px;
+    height: 30px;
+    background-color: #FBB040;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    transform: rotate(10deg);
+}
+
+/* 호랑이 얼굴 */
+.tiger-hat .tiger-face{
+    width: 346px;
+    height: 346px;
+    background-color: #F7941D;
+    border-radius: 50%;
+    border: var(--border-line);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 호랑이 코 */
+.tiger-main-nose {
+    width: 32px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 66px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+[class^="tiger-nose"] {
+    width: 47px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: var(--border-line);
+    position: absolute;
+    top: 75px;
+}
+.tiger-hat .tiger-nose01 {
+    left: 180px;
+    z-index: 2;
+}
+.tiger-hat .tiger-nose02 {
+    right: 180px;
+    z-index: 2;
+}
+
+/* 호랑이 무늬 */
+.tiger-patternL {
+    width: 6px;
+    height: 22px;
+    background-color: #000;
+    border-radius: 30%;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tiger-patternT {
+    width: 30px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 30%;
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tiger-patternT::before {
+    content: '';
+    width: 47px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 30%;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 호랑이 수염 */
+[class^="tiger-beard"] {
+    width: 38px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 30%;
+    position: absolute;
+    top: 96px;
+}
+.tiger-beard-left {
+    left: 85px;
+    transform: rotate(42deg);
+}
+.tiger-beard-left::before {
+    content: '';
+    width: 38px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 30%;
+    position: absolute;
+    top: 13px;
+    left: 2px;
+}
+.tiger-beard-right {
+    right: 85px;
+    transform: rotate(-42deg);
+}
+.tiger-beard-right::before {
+    content: '';
+    width: 38px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 30%;
+    position: absolute;
+    top: 13px;
+    right: 2px;
+}
+
+/* 호랑이 눈 */
+.tiger-hat .tiger-eyes {
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33%;
+}
+
+
+/* 귀 */
+.character .ear-left {
+    width: 38%;
+    position: absolute;
+    top: 0;
+    animation: ani-ear-left 0.8s infinite alternate;
+}
+.character .ear-right {
+    width: 38%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: ani-ear-right 0.8s infinite alternate;
+}
+
+/* 얼굴 */
+.main .face {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+}
+
+/* 눈 */
+[class^="eye"]{
+    width: 49px;
+    height: 49px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 56%;
+}
+.main .eye-left {
+    left: 28.3%;
+    animation: wink 3s infinite steps(2) reverse;
+}
+.main .eye-right {
+    right: 28.3%;
+}
+.main .eye-left::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 7px;
+    left: 17px;
+    animation: wink-ani 3s infinite steps(1) reverse;
+}
+.main .eye-right::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 7px;
+    right: 17px;
+}
+
+/* 코 */
+.main .nose {
+    width: 30px;
+    height: 24px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 30.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main .m-n-line {
+    width: 6px;
+    height: 26px;
+    background: #000;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main .m-n01 {
+    width: 28px;
+    height: 20px;
+    border-radius: 50%;
+    border: var(--border-line);
+    position: absolute;
+    bottom: 22.2%;
+    left: 44.2%;
+    z-index: 1;
+}
+.main .m-n01::after {
+    content: '';
+    width: 26px;
+    height: 20px;
+    border-radius: 0 0 4px 0;
+    background-color: #fff;
+    position: absolute;
+    bottom: 2px;
+    right: -1.1px;
+}
+.main .m-n02 {
+    width: 28px;
+    height: 20px;
+    border-radius: 50%;
+    border: var(--border-line);
+    position: absolute;
+    bottom: 22.2%;
+    right: 44.2%;
+    z-index: 1;
+}
+.main .m-n02::after {
+    content: '';
+    width: 26px;
+    height: 20px;
+    border-radius: 0 0 0 4px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 2px;
+    left: -1.1px;
+}
+
+/* 입 */
+.main .mouth {
+    width: 33px;
+    height: 39px;
+    background-color: #FC4C4C;
+    border-radius: 17px;
+    border: var(--border-line);
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+.main .mouth::before {
+    content: '';
+    width: 38px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: -9px;
+    left: -8px;
+}
+
+/* 볼 발그레 */
+[class^="cheek"]{
+    width: 40px;
+    height: 40px;
+    background: #FFD4D4;
+    /* filter: blur(2px); */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20%;
+    animation: cheek-ani 2s infinite alternate;
+}
+.main .cheek-left {
+    left: 24.5%;
+}
+.main .cheek-right {
+    right: 24.5%;
+}
+
+.star {
+    position: absolute;
+    bottom: 31%;
+    left: 23%;
+    font-size: 30px;
+    z-index: 999;
+    color: #FFBE2E;
+    animation: star-ani 3s linear infinite;
+}
+
+@keyframes ani-ear-left {
+    100% {
+        transform: rotate(-6deg);
+    }
+}
+@keyframes ani-ear-right {
+    100% {
+        transform: rotate(6deg);
+    }
+}
+
+@keyframes wink {
+    100% {
+        width: 48px;
+        height: 1px;
+        background-color: #000;
+        border-radius: 20px;
+        position: absolute;
+        top: 235px;
+        left: 128px;
+    }
+}
+@keyframes wink-ani {
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cheek-ani{
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes star-ani {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+        left: 10%;
+    }
+}
